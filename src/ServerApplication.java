@@ -1,5 +1,3 @@
-import example.HelloResource;
-import example.Socket_on;
 import org.restlet.Application;
 import org.restlet.Component;
 import org.restlet.Restlet;
@@ -30,11 +28,8 @@ public class ServerApplication extends Application {
 		    	// Create a router
 				Router router = new Router(getContext());
 
-				// Serve static HTML from ROOT_URI by default 
-				Directory directory = new Directory(getContext(), ROOT_URI);
-				router.attachDefault(directory);
-				
 				// Provide other functions depending on URL
+				router.attach("/", IndexResource.class);
 				router.attach("/on", Socket_on.class);
 				router.attach("/off", Socket_off.class);
 				return router;
