@@ -21,8 +21,8 @@ public class Socket_on extends ServerResource{
 			// Call the client resource
 			ClientResource resource = new
 			// ClientResource("http://192.168.178.31/event?port=4&action=1&pass=password");
-			ClientResource("http://www.ipv6lab.beuth-hochschule.de/event.php?port=" + port + "&action=1&pass=password");
-//			ClientResource("http://141.64.156.12//event.php?port=" + port + "&action=1&pass=password");
+//			ClientResource("http://www.ipv6lab.beuth-hochschule.de/event.php?port=" + port + "&action=1&pass=password");
+			ClientResource("http://141.64.156.12/event?port=" + port + "&action=1&pass=password");
 
 			Writer writer = new StringWriter();
 			resource.get().write(writer);
